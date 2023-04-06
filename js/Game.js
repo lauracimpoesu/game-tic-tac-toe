@@ -1,36 +1,36 @@
 export default class Game {
   constructor() {
-    this.newGame();
+    this.newGame()
   }
 
   newGame() {
-    this.turn = "X";
-    this.board = new Array(9).fill(null);
-    this.winner = null;
+    this.turn = "X"
+    this.board = new Array(9).fill(null)
+    this.winner = null
   }
 
   nextTurn() {
     if (this.turn === "X") {
-      this.turn = "O";
+      this.turn = "O"
     } else {
-      this.turn = "X";
+      this.turn = "X"
     }
   }
 
   makeMove(i) {
     if (!this.isInProgress()) {
-      return;
+      return
     }
 
     if (this.board[i]) {
-      return;
+      return
     }
-    this.board[i] = this.turn;
-    let winningCombination = this.findWinningCombination();
+    this.board[i] = this.turn
+    let winningCombination = this.findWinningCombination()
     if (!winningCombination) {
-      this.nextTurn();
+      this.nextTurn()
     } else {
-      this.winner = winningCombination[0];
+      this.winner = winningCombination[0]
     }
   }
 
@@ -44,26 +44,26 @@ export default class Game {
       [2, 5, 8],
       [0, 4, 8],
       [6, 4, 2],
-    ];
+    ]
 
     for (const combination of winningCombinations) {
-      const [a, b, c] = combination;
+      const [a, b, c] = combination
       if (
         this.board[a] &&
         this.board[a] === this.board[b] &&
         this.board[a] === this.board[c]
       ) {
-        return combination;
+        return combination
       }
     }
-    return null;
+    return null
   }
 
   isInProgress() {
     if (!this.findWinningCombination() && this.board.includes(null)) {
-      return true;
+      return true
     } else {
-      return false;
+      return false
     }
   }
 }

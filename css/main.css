@@ -94,13 +94,13 @@
   }
 
   .player-x.active {
-    color: #ff4d00;
-    border-color: #ff4d00;
+    color: #ffffff;
+    border-color: #7134ff;
   }
 
   .player-o.active {
-    color: #00c93c;
-    border-color: #00c93c;
+    color: #ffffff;
+    border-color: #ff305d;
   }
 
   .player-o {
@@ -144,11 +144,11 @@
   }
 
   .tile-x {
-    color: #ff4d00;
+    color: #ff0037;
   }
 
   .tile-o {
-    color: #00c93c;
+    color: #5900ff;
   }
   
   .board__tile:not(:nth-child(3n)) {
@@ -163,7 +163,7 @@
   }
   
   .board__tile--winner span {
-    color: #23CE6B !important;
+    color: #00ac48 !important;
   }
   
   @media only screen and (max-width: 1200px) {
